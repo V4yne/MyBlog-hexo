@@ -214,7 +214,7 @@ aside:
     enable: true
     
     #content: <center>主域名：<br><a href="https://www.fomal.cc"><b><font color="#5ea6e5">fomal.cc</font></b></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn"><b><font color="#5ea6e5">fomal.cn</font></b></a><br>备用域名：<br><a href="https://blog.fomal.cc"><b><font color="#5ea6e5">blog.fomal.cc</font></b></a><br><a href="https://aa.fomal.cc"><b><font color="#5ea6e5">aa.fomal.cc</font></b></a><br><a href="https://bb.fomal.cc"><b><font color="#5ea6e5">bb.fomal.cc</font></b></a><br><a href="mailto:admin@fomal.cn">📬：<b><font color="#a591e0">admin@fomal.cn</font></b></a></center>
-    content: <center>主域名：<br><a href="https://www.v4yne.site"><b><font color="#5ea6e5">v4yne.site</font></b></a></center> <center>📬：<b><font color="#a591e0">v4yne1ustc.gmail.com</font></b></center>
+    content: <center>主域名：<br><a href="https://www.v4yne.site"><b><font color="#5ea6e5">v4yne.site</font></b></a></center> <center>📬：<b><font color="#a591e0">v4yne1ustc@gmail.com</font></b></center>
   card_recent_post:
     enable: false
     limit: 3 # if set 0 will show all
