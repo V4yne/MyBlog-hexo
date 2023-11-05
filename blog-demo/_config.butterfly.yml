@@ -155,20 +155,6 @@ cover:
   default_cover:
     - https://source.fomal.cc/img/default_cover_14.webp
 
-post_meta:
-  page: # Home Page
-    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
-    date_format: relative # date/relative 顯示日期還是相對日期
-    categories: true # true or false 主頁是否顯示分類
-    tags: true # true or false 主頁是否顯示標籤
-    label: true # true or false 顯示描述性文字
-  post:
-    date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
-    date_format: relative # date/relative 顯示日期還是相對日期
-    categories: true # true or false 文章頁是否顯示分類
-    tags: true # true or false 文章頁是否顯示標籤
-    label: true # true or false 顯示描述性文字
-
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
@@ -281,6 +267,7 @@ background_img: url(https://source.fomal.cc/img/dm1.webp)
 # 留空 不显示背景
 background: url(https://source.fomal.cc/img/dm1.webp)
 
+index_img: transparent
 # Footer Background
 footer_bg: transparent
 
@@ -341,6 +328,58 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+post_meta:
+  page:
+    date_type: both # created or updated or both 主页文章日期是创建日或者更新日或都显示
+    date_format: relative # date/relative 显示日期还是相对日期
+    categories: true # true or false 主页是否显示分类
+    tags: true # true or false 主页是否显示标签
+    label: true # true or false 显示描述性文字
+  post:
+    date_type: both # created or updated or both 文章页日期是创建日或者更新日或都显示
+    date_format: relative # date/relative 显示日期还是相对日期
+    categories: true # true or false 文章页是否显示分类
+    tags: true # true or false 文章页是否显示标签
+    label: true # true or false 显示描述性文字
+
+# Beautify (美化頁面顯示)
+beautify:
+  enable: true
+  field: site # site/post
+  title-prefix-icon: '\f863' # '\f0c1'
+  title-prefix-icon-color: "#F47466" # '#F47466'
+
+# Post
+# --------------------------------------
+
+# toc (目錄)
+toc:
+  post: true
+  page: false
+  number: false
+  expand: false
+  style_simple: true # for post
+
+post_copyright:
+  enable: true
+  decode: true
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 文章打赏
+# Sponsor/reward
+reward:
+  enable: true
+  coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
+  QR_code:
+    - img: /img/wechat-pay.jpeg
+      link:
+      text: 微信
+    - img: /img/alipay.jpeg
+      link:
+      text: 支付宝
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
