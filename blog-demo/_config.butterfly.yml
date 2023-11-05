@@ -1,0 +1,355 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: V4yne's Site
+description: '日拱一卒，功不唐捐。'
+keywords:
+author: V4yne
+language: zh-CN
+timezone: ''
+# 用本地图片的话就用source路径作为根目录的相对路径
+avatar:
+  img: https://s2.loli.net/2023/11/05/q8shl56dIyFaiMO.jpg
+  effect: false
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: http://example.com
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+menu:
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Tags: /tags/ || fas fa-tags
+  Categories: /categories/ || fas fa-folder-open
+  List||fas fa-list:
+    Music: /music/ || fas fa-music
+    Movie: /movies/ || fas fa-video
+  Link: /link/ || fas fa-link
+  About: /about/ || fas fa-heart
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+
+
+# Code Blocks (代码相关的配置)
+# --------------------------------------
+
+highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
+highlight_copy: true # copy button
+highlight_lang: true # show the code language
+highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+highlight_height_limit: 230 # unit: px
+code_word_wrap: false
+
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# copy settings
+# copyright: Add the copyright information after copied content (复制的内容后面加上版权信息)
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 50
+
+
+# social
+social:
+  fab fa-github: https://github.com/V4yne || Github
+  fas fa-envelope: v4yne1ustc@gmail.com || Email
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# search (搜索)
+# see https://butterfly.js.org/posts/ceeb73f/#搜索系統
+# --------------------------------------
+
+# Algolia search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 5
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "我们没有找到任何搜索结果: ${query}"
+    hits_stats: "找到${hits}条结果（用时${time} ms）"
+
+# Local search
+local_search:
+  enable: true
+  preload: true
+  CDN:
+
+# A simple 404 page
+error_404:
+  enable: true
+  subtitle: "此页面不存在哦٩͡[๏̯͡๏]"
+  # https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  background: /assets/404_1.jpg
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+#封面:
+cover:
+  # display the cover or not (是否顯示文章封面)
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  # the position of cover in home page (封面顯示的位置)
+  # left/right/both
+  position: both
+  # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
+  default_cover:
+    - https://source.fomal.cc/img/default_cover_14.webp
+
+post_meta:
+  page: # Home Page
+    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_format: relative # date/relative 顯示日期還是相對日期
+    categories: true # true or false 主頁是否顯示分類
+    tags: true # true or false 主頁是否顯示標籤
+    label: true # true or false 顯示描述性文字
+  post:
+    date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
+    date_format: relative # date/relative 顯示日期還是相對日期
+    categories: true # true or false 文章頁是否顯示分類
+    tags: true # true or false 文章頁是否顯示標籤
+    label: true # true or false 顯示描述性文字
+
+# wordcount (字數統計)
+# see https://butterfly.js.org/posts/ceeb73f/#字數統計
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 简体繁体切换
+translate:
+  enable: true
+  # 默认按钮显示文字(网站是简体，应设置为'default: 繁')
+  default: 繁
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  # 网站默认语言，1: 繁体中文, 2: 简体中文
+  defaultEncoding: 2
+  # Time delay 延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+  translateDelay: 0
+  # 当文字是简体时，按钮显示的文字
+  msgToTraditionalChinese: '繁'
+  # 当文字是繁体时，按钮显示的文字
+  msgToSimplifiedChinese: '簡'
+
+# dark mode
+darkmode:
+  enable: true
+  # dark 和 light 两种模式切换按钮
+  button: true
+  # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
+  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
+  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
+  # autoChangeMode: false
+  autoChangeMode: false
+
+# 阅读模式
+readmode: true
+
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true # display on mobile
+  position: right # left or right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description:
+    button:
+      enable: true
+      icon: # fab fa-github
+      text: 🛴前往小家...
+      link: https://github.com/V4yne
+  card_announcement:
+    enable: true
+    
+    #content: <center>主域名：<br><a href="https://www.fomal.cc"><b><font color="#5ea6e5">fomal.cc</font></b></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn"><b><font color="#5ea6e5">fomal.cn</font></b></a><br>备用域名：<br><a href="https://blog.fomal.cc"><b><font color="#5ea6e5">blog.fomal.cc</font></b></a><br><a href="https://aa.fomal.cc"><b><font color="#5ea6e5">aa.fomal.cc</font></b></a><br><a href="https://bb.fomal.cc"><b><font color="#5ea6e5">bb.fomal.cc</font></b></a><br><a href="mailto:admin@fomal.cn">📬：<b><font color="#a591e0">admin@fomal.cn</font></b></a></center>
+    content: <center>主域名：<br><a href="https://www.v4yne.site"><b><font color="#5ea6e5">v4yne.site</font></b></a></center> <center>📬：<b><font color="#a591e0">v4yne1ustc.gmail.com</font></b></center>
+  card_recent_post:
+    enable: false
+    limit: 3 # if set 0 will show all
+    sort: date # date or updated
+    sort_order: # Don't modify the setting unless you know how it works
+  card_categories:
+    enable: false
+    limit: 8 # if set 0 will show all
+    expand: none # none/true/false
+    sort_order: # Don't modify the setting unless you know how it works
+  card_tags:
+    enable: false
+    limit: 20 # if set 0 will show all
+    color: true
+    sort_order: # Don't modify the setting unless you know how it works
+  card_archives:
+    enable: false
+    type: monthly # yearly or monthly
+    format: MMMM YYYY # eg: YYYY年MM月
+    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    limit: 8 # if set 0 will show all
+    sort_order: # Don't modify the setting unless you know how it works
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order: # Don't modify the setting unless you know how it works
+  card_weibo:
+    enable: true
+
+# 访问人数
+busuanzi:
+  site_uv: true  # 本站总访客数
+  site_pv: true  # 本站总访问量 
+  page_pv: true  # 本文总阅读量
+
+# Time difference between publish date and now (網頁運行時間)
+# Formal: Month/Day/Year Time or Year/Month/Day Time
+runtimeshow:
+  enable: true
+  publish_date: 2023/11/05 12:00:00
+  ##网页开通时间
+  #格式: 月/日/年 时间
+  #也可以写成 年/月/日 时间
+
+background_img: url(https://source.fomal.cc/img/dm1.webp)
+
+# 图片格式 url(http://xxxxxx.com/xxx.jpg)
+# 颜色（HEX值/RGB值/颜色单词/渐变色)
+# 留空 不显示背景
+background: url(https://source.fomal.cc/img/dm1.webp)
+
+# Footer Background
+footer_bg: transparent
+
+# Add mask to header or footer (为 header 或 footer 添加黑色半透遮罩)
+mask:
+  header: false
+
+# Typewriter Effect (打字效果)
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: false
+  colorful: true # open particle animation (冒光特效)
+  shake: true #  open shake (抖動特效)
+  mobile: false
+
+canvas_fluttering_ribbon:
+  enable: true
+  mobile: true # false 手机端不显示 true 手机端显示
+
+# the subtitle on homepage (主頁subtitle)
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # loop (循環打字)
+  loop: true
+  # source 調用第三方服務
+  # source: https://www.jinrishici.com/
+  # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
+  # source: 2  調用一句網（簡體） http://yijuzhan.com/
+  # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: 1
+  # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
+  sub:
+    # - "Welcome to Fomalhaut🥝のTiny Home!🤣🤣🤣"
+    # - "Hope you have a nice day!🍭🍭🍭"
+
+# 加载动画 Loading Animation
+preloader: true
+
+# 图片大图查看模式
+# fancybox http://fancyapps.com/fancybox/3/
+fancybox: true
+
+fireworks:
+  enable: true
+  zIndex: 9999 # -1 or 9999
+  mobile: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: butterfly
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repository: git@github.com:V4yne/V4yne.github.io.git
+  branch: main
